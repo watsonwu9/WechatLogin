@@ -9,10 +9,15 @@
 
 #import <UIKit/UIKit.h>
 #import "WXApi.h"
+#import "RCTBridgeModule.h"
+#import  "RCTBridge.h"
+#import "RCTLog.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,RCTBridgeModule>
 
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) NSDictionary *DictionaryUserInfo;
+
 
 @end

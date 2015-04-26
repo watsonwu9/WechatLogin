@@ -9,10 +9,19 @@
 
 #import "AppDelegate.h"
 #import "RCTRootView.h"
+#import "RCTEventDispatcher.h"
+
+
+
 NSString *const WECHAT_APP_ID = @"wx469a2a130e24f2a8";
 NSString *const WECHAT_APP_SECRET = @"f14e557eba84c4a45b180128ddca93b2";
 
 @implementation AppDelegate
+
+@synthesize bridge = _bridge;
+
+
+RCT_EXPORT_MODULE();
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -142,9 +151,10 @@ NSString *const WECHAT_APP_SECRET = @"f14e557eba84c4a45b180128ddca93b2";
          */
         
         else{
-          NSLog(@"the user nickname is %@ ,from %@",[dic objectForKey:@"nickname"],[dic objectForKey:@"country"]);
-          //  self.wxHeadImg.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dic objectForKey:@"headimgurl"]]]];
           self.DictionaryUserInfo = dic;
+          NSLog(@"we are heer1");
+          [self sendUserInfoToJS];
+          
         }
       }
     });
@@ -169,11 +179,24 @@ NSString *const WECHAT_APP_SECRET = @"f14e557eba84c4a45b180128ddca93b2";
           
         }else{
           self.DictionaryUserInfo = dic;
-          
+          NSLog(@"we are heer2");
+          [self sendUserInfoToJS];
+
         }
       }
     });
   });
+}
+
+//RCT_EXPORT_METHOD(sendUserInfoToJS) {
+-(void)sendUserInfoToJS{
+
+  NSLog(@"hi i am %@",[self.DictionaryUserInfo objectForKey:@"nickname"]);
+  
+  [self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo"
+                                                  body:@{@"nickname":@"jackLEE"}];
+ //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"Wu dayi",@"openid": @"123456799",@"headimgurl":@"www.apple.com"}];
+  
 }
 
 
