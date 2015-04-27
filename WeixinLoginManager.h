@@ -17,7 +17,7 @@
 //@property(nonatomic) NSDictionary *SharedDictionaryUserInfo;
 @property (nonatomic) NSDictionary *DictionaryUserInfo;
 
-+(WeixinLoginManager*)sharedInstance;
+//+(WeixinLoginManager*)sharedInstance;
 
 
 @end

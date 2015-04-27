@@ -16,7 +16,7 @@
 
 
 NSString *const WECHAT_APP_ID = @"wx469a2a130e24f2a8";
-NSString *const WECHAT_APP_SECRET = @"f14e557eba84c4a45b180128ddca93b2";
+NSString *const WECHAT_APP_SECRET = @"f14e557eba84c4a45b180128ddca93b2dd2";
 
 
 
@@ -25,16 +25,16 @@ NSString *const WECHAT_APP_SECRET = @"f14e557eba84c4a45b180128ddca93b2";
 //@synthesize SharedDictionaryUserInfo;
 @synthesize bridge = _bridge;
 
-+(WeixinLoginManager*)sharedInstance{
-  static WeixinLoginManager *myInstance = nil;
-  if (myInstance == nil) {
-    myInstance = [[[self class] alloc] init];
-    myInstance.DictionaryUserInfo = [[NSDictionary alloc]init];
-  }
-  //self.DictionaryUserInfo = [[NSDictionary alloc] init];
-  
-  return myInstance;
-}
+//+(WeixinLoginManager*)sharedInstance{
+//  static WeixinLoginManager *myInstance = nil;
+//  if (myInstance == nil) {
+//    myInstance = [[[self class] alloc] init];
+//    myInstance.DictionaryUserInfo = [[NSDictionary alloc]init];
+//  }
+//  //self.DictionaryUserInfo = [[NSDictionary alloc] init];
+//  
+//  return myInstance;
+//}
 
 
 RCT_EXPORT_MODULE();
@@ -52,13 +52,25 @@ RCT_EXPORT_METHOD(sendAuthReqToWX) {
    
   }else{
     //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:self.SharedDictionaryUserInfo];
-   // [self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWong"}];
+    //[_bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWong"}];
     NSLog(@"you just send a authrequest successfully");
+    //[self sendDataToJS]; //uncomment this and the sendDeviceEventWithName method gets called.
     
   }
 
  
 };
+
+
+
+-(void)sendDataToJS {
+  
+  NSLog(@"you are in sendDataToJS");
+  [_bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWU"}];
+  
+};
+
+
 
 
 -(void) onResp:(BaseResp*)resp
@@ -77,7 +89,9 @@ RCT_EXPORT_METHOD(sendAuthReqToWX) {
     
     NSLog(@"haha thanks watson");
     [self getAccessTokenWithCode:aresp.code];
-    [self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWong"}];
+    [self sendDataToJS]; //uncomment this BUT the sendDeviceEventWithName method does NOT get called.
+
+   // [_bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWong"}];
   }
 
 
@@ -142,7 +156,7 @@ RCT_EXPORT_METHOD(sendAuthReqToWX) {
         
         else{
           self.DictionaryUserInfo = dic;
-          [self sendUserInfoToJS];
+          //[self sendUserInfoToJS];
           
         }
       }
@@ -168,7 +182,7 @@ RCT_EXPORT_METHOD(sendAuthReqToWX) {
           
         }else{
           self.DictionaryUserInfo = dic;
-          [self sendUserInfoToJS];
+          //[self sendUserInfoToJS];
           
         }
       }
@@ -177,29 +191,9 @@ RCT_EXPORT_METHOD(sendAuthReqToWX) {
 }
 
 
--(void)sendUserInfoToJS{
-  
-  NSLog(@"hi i am %@",[self.DictionaryUserInfo objectForKey:@"nickname"]);
-  //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWong"}];
-  //[WeixinLoginManager sharedInstance].SharedDictionaryUserInfo = self.DictionaryUserInfo;
-  
-  //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname":@"jackLEE"}];
-  //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"Wu dayi",@"openid": @"123456799",@"headimgurl":@"www.apple.com"}];
-  
-}
 
 
-//RCT_EXPORT_METHOD(sendUserInfoToJS) {
-//  
-//  
-//  NSLog(@"hi i am %@",[self.DictionaryUserInfo objectForKey:@"nickname"]);
-//  //[WeixinLoginManager sharedInstance].SharedDictionaryUserInfo = self.DictionaryUserInfo;
-//  
-//  [self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname":@"jackLEE"}];
-//  //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"Wu dayi",@"openid": @"123456799",@"headimgurl":@"www.apple.com"}];
-//  
-//  
-//};
+
 
 
 
