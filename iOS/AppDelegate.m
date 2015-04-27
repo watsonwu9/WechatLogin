@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "RCTRootView.h"
 #import "RCTEventDispatcher.h"
+#import "WeixinLoginManager.h"
+
 
 
 
@@ -39,7 +41,7 @@ RCT_EXPORT_MODULE();
   //
   // To run on device, change `localhost` to the IP address of your computer, and make sure your computer and
   // iOS device are on the same Wi-Fi network.
-  jsCodeLocation = [NSURL URLWithString:@"http://192.168.1.100:8081/index.ios.bundle"];
+  jsCodeLocation = [NSURL URLWithString:@"http://10.100.139.120:8081/index.ios.bundle"];
   //jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle"];
 
   // OPTION 2
@@ -108,7 +110,6 @@ RCT_EXPORT_MODULE();
           NSLog(@"error in fetching the data from wechat");
           
         }else{
-          NSLog(@"token successfully achieved");
           [self getUserInfoWithAccessToken:[dic objectForKey:@"access_token"] andOpenId:[dic objectForKey:@"openid"]];
         }
         
@@ -152,7 +153,6 @@ RCT_EXPORT_MODULE();
         
         else{
           self.DictionaryUserInfo = dic;
-          NSLog(@"we are heer1");
           [self sendUserInfoToJS];
           
         }
@@ -179,7 +179,6 @@ RCT_EXPORT_MODULE();
           
         }else{
           self.DictionaryUserInfo = dic;
-          NSLog(@"we are heer2");
           [self sendUserInfoToJS];
 
         }
@@ -192,9 +191,10 @@ RCT_EXPORT_MODULE();
 -(void)sendUserInfoToJS{
 
   NSLog(@"hi i am %@",[self.DictionaryUserInfo objectForKey:@"nickname"]);
+  [WeixinLoginManager sharedInstance].SharedDictionaryUserInfo = self.DictionaryUserInfo;
   
-  [self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo"
-                                                  body:@{@"nickname":@"jackLEE"}];
+  //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo"
+   //                                               body:@{@"nickname":@"jackLEE"}];
  //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"Wu dayi",@"openid": @"123456799",@"headimgurl":@"www.apple.com"}];
   
 }

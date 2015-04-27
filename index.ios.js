@@ -11,6 +11,7 @@ var {
   StyleSheet,
   Text,
   View,
+  //Image,
   TouchableHighlight,
 } = React;
 
@@ -20,19 +21,21 @@ var WeixinLoginManager = require('NativeModules').WeixinLoginManager;
 
 
 
-  var subscription = DeviceEventEmitter.addListener(
-  'UserInfo',
-  (user) => {
-    // this.setState({nickname:user.nickname});
-    // this.setState({openid:user.openid});
-    // this.setState({headimgurl:user.headimgurl});
-    console.log("i find something from OC");
-    console.log(user.nickname);
+var subscription = DeviceEventEmitter.addListener(
+'UserInfo',
+(user) => {
+   //this.setState({nickname:user.nickname});
+  // this.setState({openid:user.openid});
+  // this.setState({headimgurl:user.headimgurl});
+  console.log("i find something from OC");
+  console.log(user.nickname);
 
-  }
- );
+}
+);
 
 var yiqixie = React.createClass({
+
+  
 
   WXLogin(){
     WeixinLoginManager.sendAuthReqToWX();
@@ -77,9 +80,11 @@ var yiqixie = React.createClass({
         </Text>
 
          <TouchableHighlight onPress={this.WXLogin}>
+
           <Text style={styles.welcome}>
             Wechat Login
           </Text>
+
         </TouchableHighlight>
 
       </View>

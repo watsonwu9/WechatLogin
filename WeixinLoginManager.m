@@ -15,15 +15,26 @@
 
 
 @implementation WeixinLoginManager
+@synthesize SharedDictionaryUserInfo;
 @synthesize bridge = _bridge;
 
++(WeixinLoginManager*)sharedInstance{
+  static WeixinLoginManager *myInstance = nil;
+  if (myInstance == nil) {
+    myInstance = [[[self class] alloc] init];
+    myInstance.SharedDictionaryUserInfo = [[NSDictionary alloc]init];
+  }
+  
+ 
+  
+  return myInstance;
+}
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(sendAuthReqToWX) {
 
   
   SendAuthReq *req = [[SendAuthReq alloc] init];
- RCTLog(@"you are about to send the auth request");
   
   req.scope = @"snsapi_userinfo,snsapi_base";
   req.state = @"0744";
@@ -32,7 +43,8 @@ RCT_EXPORT_METHOD(sendAuthReqToWX) {
     NSLog(@"you fail to send the auth request");
    
   }else{
-    //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWong"}];
+    //[self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:self.SharedDictionaryUserInfo];
+    [self.bridge.eventDispatcher sendDeviceEventWithName:@"UserInfo" body:@{@"nickname": @"BruceWong"}];
     NSLog(@"you just send a authrequest successfully");
     
   }
