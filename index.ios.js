@@ -24,11 +24,12 @@ var WeixinLoginManager = require('NativeModules').WeixinLoginManager;
 var subscription = DeviceEventEmitter.addListener(
 'UserInfo',
 (user) => {
-   //this.setState({nickname:user.nickname});
+  //this.setState({nickname:user.nickname});
   // this.setState({openid:user.openid});
   // this.setState({headimgurl:user.headimgurl});
   console.log("i find something from OC");
   console.log(user.nickname);
+
 
 }
 );

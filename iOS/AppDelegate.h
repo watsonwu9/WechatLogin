@@ -14,10 +14,11 @@
 #import "RCTLog.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,RCTBridgeModule>
+//@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,RCTBridgeModule>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,RCTBridgeModule>//WXApiDelegate,RCTBridgeModule>
 
 @property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) NSDictionary *DictionaryUserInfo;
+//@property (nonatomic, strong) NSDictionary *DictionaryUserInfo;
 
 
 

@@ -14,7 +14,8 @@
 
 
 @interface WeixinLoginManager : NSObject<WXApiDelegate,RCTBridgeModule>
-@property(nonatomic) NSDictionary *SharedDictionaryUserInfo;
+//@property(nonatomic) NSDictionary *SharedDictionaryUserInfo;
+@property (nonatomic) NSDictionary *DictionaryUserInfo;
 
 +(WeixinLoginManager*)sharedInstance;
 
