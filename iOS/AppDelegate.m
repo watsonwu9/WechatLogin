@@ -17,6 +17,9 @@
 
 
 @implementation AppDelegate
+{
+  RCTBridge *myBridge;
+}
 
 
 @synthesize bridge = _bridge;
@@ -40,7 +43,7 @@ RCT_EXPORT_MODULE();
   //
   // To run on device, change `localhost` to the IP address of your computer, and make sure your computer and
   // iOS device are on the same Wi-Fi network.
-  jsCodeLocation = [NSURL URLWithString:@"http://192.168.1.100:8081/index.ios.bundle"];
+  jsCodeLocation = [NSURL URLWithString:@"http://172.27.35.29:8081/index.ios.bundle"];
   //jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle"];
 
   // OPTION 2
@@ -54,8 +57,8 @@ RCT_EXPORT_MODULE();
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"yiqixie"
                                                    launchOptions:launchOptions];
-  self.myBridge =[[[self class] alloc]init];
-  self.myBridge = rootView.bridge;
+//  self.myBridge =[[[self class] alloc]init];
+  myBridge = rootView.bridge;
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [[UIViewController alloc] init];
@@ -68,13 +71,13 @@ RCT_EXPORT_MODULE();
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
   //return [WXApi handleOpenURL:url delegate:self];
-   return [WXApi handleOpenURL:url delegate:self.myBridge.modules[@"WeixinLoginManager"]];
+   return [WXApi handleOpenURL:url delegate:myBridge.modules[@"WeixinLoginManager"]];
 }
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
   //return [WXApi handleOpenURL:url delegate:self];
-   return [WXApi handleOpenURL:url delegate:self.myBridge.modules[@"WeixinLoginManager"]];
+   return [WXApi handleOpenURL:url delegate:myBridge.modules[@"WeixinLoginManager"]];
 }
 
 

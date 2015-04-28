@@ -16,7 +16,7 @@ var {
 } = React;
 
 var WeixinLoginManager = require('NativeModules').WeixinLoginManager;
-//var appDelegate = require('NativeModules').appDelegate;
+
 
 
 
@@ -25,7 +25,8 @@ var subscription = DeviceEventEmitter.addListener(
 'UserInfo',
 (user) => {
   console.log("i find something from OC");
-  console.log(user.nickname);
+  console.log(user.respCode);
+  //yiqixie.setState(respCode:user.respCode);
 
 
 }
@@ -43,7 +44,8 @@ var yiqixie = React.createClass({
     return{
       nickname:'caicai',
       openid :'87892',
-      headimgurl:''
+      headimgurl:'',
+      respCode:'dd',
 
     }
   },
@@ -74,7 +76,7 @@ var yiqixie = React.createClass({
         <Text style={styles.instructions}>
           Beijing Welcomes you and your family 
           {this.state.nickname}
-          {this.state.openid}
+          {this.state.respCode}
         </Text>
 
          <TouchableHighlight onPress={this.WXLogin}>

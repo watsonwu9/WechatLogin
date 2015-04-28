@@ -18,7 +18,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,RCTBridgeModule>//WXApiDelegate,RCTBridgeModule>
 
 @property (nonatomic, strong) UIWindow *window;
-@property (nonatomic) RCTBridge *myBridge;
+//@property (nonatomic) RCTBridge *myBridge;
 
 
 
