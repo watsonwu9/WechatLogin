@@ -22,12 +22,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		3CA08DB61AF0B57500008F7D /* WechatLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA08DB51AF0B57500008F7D /* WechatLoginManager.m */; };
 		3CBA1BBB1AEC884A00A6FA33 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBA1BBA1AEC884A00A6FA33 /* SystemConfiguration.framework */; };
 		3CBA1BBD1AEC88C000A6FA33 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBA1BBC1AEC88C000A6FA33 /* libz.dylib */; };
 		3CBA1BBF1AEC88D000A6FA33 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBA1BBE1AEC88D000A6FA33 /* libsqlite3.0.dylib */; };
 		3CBA1BC91AEC8D6C00A6FA33 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBA1BC61AEC8D6C00A6FA33 /* libWeChatSDK.a */; };
 		3CBA1BCB1AEC8E1F00A6FA33 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBA1BCA1AEC8E1F00A6FA33 /* libc++.dylib */; };
-		3CBA1BCE1AEC904500A6FA33 /* WeixinLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA1BCD1AEC904500A6FA33 /* WeixinLoginManager.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +131,8 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iOS/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iOS/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		3CA08DB41AF0B57500008F7D /* WechatLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatLoginManager.h; sourceTree = "<group>"; };
+		3CA08DB51AF0B57500008F7D /* WechatLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WechatLoginManager.m; sourceTree = "<group>"; };
 		3CBA1BBA1AEC884A00A6FA33 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3CBA1BBC1AEC88C000A6FA33 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3CBA1BBE1AEC88D000A6FA33 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -138,8 +140,6 @@
 		3CBA1BC71AEC8D6C00A6FA33 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		3CBA1BC81AEC8D6C00A6FA33 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		3CBA1BCA1AEC8E1F00A6FA33 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		3CBA1BCC1AEC904500A6FA33 /* WeixinLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeixinLoginManager.h; sourceTree = "<group>"; };
-		3CBA1BCD1AEC904500A6FA33 /* WeixinLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeixinLoginManager.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
-				3CBA1BCC1AEC904500A6FA33 /* WeixinLoginManager.h */,
-				3CBA1BCD1AEC904500A6FA33 /* WeixinLoginManager.m */,
+				3CA08DB41AF0B57500008F7D /* WechatLoginManager.h */,
+				3CA08DB51AF0B57500008F7D /* WechatLoginManager.m */,
 				3CBA1BCA1AEC8E1F00A6FA33 /* libc++.dylib */,
 				3CBA1BBE1AEC88D000A6FA33 /* libsqlite3.0.dylib */,
 				3CBA1BBC1AEC88C000A6FA33 /* libz.dylib */,
@@ -557,7 +557,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				3CBA1BCE1AEC904500A6FA33 /* WeixinLoginManager.m in Sources */,
+				3CA08DB61AF0B57500008F7D /* WechatLoginManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

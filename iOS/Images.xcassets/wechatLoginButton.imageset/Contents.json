@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "wx_button-1.png"
+      "filename" : "wechatLoginButton.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "wx_button.png"
+      "filename" : "wechatLoginButton@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "wx_button-2.png"
+      "filename" : "wechatLoginButton@3x.png"
     }
   ],
   "info" : {
