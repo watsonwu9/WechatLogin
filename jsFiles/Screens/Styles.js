@@ -16,6 +16,7 @@ module.exports = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
+ 
   },
   linearGradient: {
     paddingLeft: 15,
@@ -39,13 +40,20 @@ module.exports = StyleSheet.create({
     right: 0,
   },
   loginContainer: {
-    backgroundColor: 'transparent',
+    position:'relative',
+    top:40,
+    backgroundColor: '#00CD00',
+    color:'#090404',
+    borderRadius: 10,
+  
+
+
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: 'Gill Sans',
     textAlign: 'center',
-    color: '#AC6FC7',
+    color: '#ffffff',
     margin: 10,
     opacity: 0.8,
   },
@@ -55,7 +63,7 @@ module.exports = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
     color: '#efefef',
-    opacity: 0.8,
+    opacity: 1,
   },
   contentContainer: {
     position: 'absolute',
@@ -69,12 +77,20 @@ module.exports = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   profilePicture: {
-    width: 150,
-    height: 150,
-    borderRadius: 80,
+    width: 100,
+    height: 100,
+    borderRadius: 65,
     alignItems: 'center',
     alignSelf: 'center',
   },
+
+  wechatLoginButton: {
+    width: 200,
+    height: 40,
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+
   name: {
     fontSize: 20,
     color: '#000000',

@@ -11,29 +11,11 @@ var WechatApi = require('../Apis/WechatApi');
 
 var subscription = DeviceEventEmitter.addListener(
         'UserInfo',
-        // (user) => {
-        //   console.log("i find something from OC");
-        //   // console.log(user.nickname);
-        //   // console.log(user.country);
-        //   // console.log(user.openid);
-        //   WechatApi.getUserInfo(user.nickname,user.headimgurl);
+      
          (code) => {
-          console.log("i find something from OC");
-          // console.log(user.nickname);
-          // console.log(user.country);
-          // console.log(user.openid);
+          console.log("callback from OC");
           WechatApi.getUserInfo(code.userId,code.token);
-
-
-
-          // AsyncStorage.setItem(STORAGE_KEY,user.nickname)
-          //   .done();
-          // AsyncStorage.setItem(STORAGE_KEY_IMAGE,user.headimgurl)
-          //   .done();
-          //UserLoginedIn = user;
-          //LoginScreen.setState({UserLoginedIn:user});
-          //yiqixie.setState(respCode:user.respCode);
-
+        
         }
 );
 

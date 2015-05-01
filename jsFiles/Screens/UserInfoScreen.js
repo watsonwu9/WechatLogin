@@ -9,7 +9,7 @@ var {
   TouchableOpacity,
 } = React;
 
-// var Video = require('react-native-video');
+
  var UserStoreSync = require('../Mixins/UserStoreSync');
  var UserStore = require('../Stores/UserStore');
  var UserActions = require('../Actions/UserActions');
@@ -36,14 +36,12 @@ var UserInfoScreen = React.createClass({
 
             <View style={styles.contentContainer}>
             <Image style={styles.profilePicture} source={{uri:this.state.user.get('headimgurl')}} />
-            <Text style={styles.name}>
-                  {this.state.user.get('nickname')}
-            </Text>
-
-
-            <TouchableOpacity onPress={UserActions.signOut}>
-              <Text  style={styles.buttonText}>Sign out</Text>
-            </TouchableOpacity>
+            
+            <View style={styles.loginContainer}>
+              <TouchableOpacity onPress={UserActions.signOut}>
+                <Text  style={styles.buttonText}>Sign Out</Text>
+              </TouchableOpacity>
+            </View>
         </View>
         
        </View>
