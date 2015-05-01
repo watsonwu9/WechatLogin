@@ -1,8 +1,8 @@
 
-//var dispatcher = require('../AppDispatcher');
-//var UserStore = require('../Stores/UserStore');
-//var UserConstants = require('../Constants/UserConstants');
-//var WechatApi = require('../Apis/WechatApi');
+var dispatcher = require('../AppDispatcher');
+var UserStore = require('../Stores/UserStore');
+var UserConstants = require('../Constants/UserConstants');
+
 var AlertIOS = require('react-native').AlertIOS;
 
 var DeviceEventEmitter = require('RCTDeviceEventEmitter');

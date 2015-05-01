@@ -74,28 +74,7 @@ var yiqixie = React.createClass({
 
 
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor:'#90c57f',
-    marginTop: 100,
 
-
-  },
-  wrapper: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#90c57f',
-    marginTop: 180,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    marginTop: 100,
-
-  }
-
-});
 
 
 

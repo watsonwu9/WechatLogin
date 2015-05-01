@@ -28,21 +28,21 @@ var UserInfoScreen = React.createClass({
   },
 
   render() {
+
+
     return (
 
        <View style={styles.background}>
 
-        <View style={styles.contentContainer}>
-        <Image style={styles.profilePicture} source={{uri:this.state.user.get('headimgurl')}} />
-        <Text style={styles.name}>
-              {this.state.user.get('nickname')};
-           
-         
-        </Text>
+            <View style={styles.contentContainer}>
+            <Image style={styles.profilePicture} source={{uri:this.state.user.get('headimgurl')}} />
+            <Text style={styles.name}>
+                  {this.state.user.get('nickname')}
+            </Text>
 
 
             <TouchableOpacity onPress={UserActions.signOut}>
-              <Text>Sign out</Text>
+              <Text  style={styles.buttonText}>Sign out</Text>
             </TouchableOpacity>
         </View>
         
