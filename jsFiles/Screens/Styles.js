@@ -73,9 +73,9 @@ module.exports = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   profilePicture: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 120,
+    height: 120,
+    borderRadius: 50,
     alignItems: 'center',
     alignSelf: 'center',
   },

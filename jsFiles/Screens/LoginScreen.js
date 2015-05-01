@@ -41,10 +41,10 @@ var {
 //         }
 // );
 
-//var UserActions = require('../Actions/UserActions');
- var UserStore = require('../Stores/UserStore');
- var Video = require('react-native-video');
- var Modal = require('react-native-modal');
+var UserActions = require('../Actions/UserActions');
+var UserStore = require('../Stores/UserStore');
+var Video = require('react-native-video');
+var Modal = require('react-native-modal');
 // var LinearGradient = require('react-native-linear-gradient');
 // // var UserActions = require('../Actions/UserActions');
  var styles = require('./Styles');
@@ -55,7 +55,7 @@ var LoginScreen = React.createClass({
    mixins: [UserStoreSync, Modal.Mixin],
 
   login() {
-    console.log("we are about to login in");
+    console.log("about to login in LoginScreen");
     UserActions.LoginInWechat();
     //WechatLoginManager.sendAuthReq();
    
@@ -63,8 +63,10 @@ var LoginScreen = React.createClass({
 
   afterUpdateUserFromStore() {
     var user = UserStore.getState();
+    console.log('after the update in LoginScreen');
 
-    if (user.get('nickname')) {
+    if (user.get('userId')) {
+      console.log('user get the userId');
       this.props.navigator.replace({id: 'user-info'});
     }
 
@@ -73,17 +75,16 @@ var LoginScreen = React.createClass({
 
 
   getInitialState:function(){
-    console.log("Initialed");
     return{
-      nickname:'',
-      headimgurl:'',
+      // nickname:'',
+      // headimgurl:'',
 
 
     };
   },
 
   componentWillMount:function(){
-     console.log("will mounted");
+     console.log("will mounted in LoginScreen");
     // AsyncStorage.getItem(STORAGE_KEY)
     //   .then((value) =>{
     //     if (value !== null){
@@ -118,7 +119,7 @@ var LoginScreen = React.createClass({
                         style= {styles.wrapper}
                         onPress={this.login}>
                         <Text style={styles.aboutButtonText}>
-                        Sign Up {this.state.nickname}
+                        Sign Up 
                        </Text>    
                   </TouchableHighlight>
               );

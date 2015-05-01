@@ -20,8 +20,9 @@ var UserInfoScreen = React.createClass({
 
   afterUpdateUserFromStore() {
     var user = UserStore.getState();
+    console.log("afterUpdateUserFromStore rendered in UserInfoScreen");
 
-    if (!user.get('nickname')) {
+    if (!user.get('userId')) {
       this.props.navigator.replace({id: 'authenticate'});
     }
   },
@@ -32,11 +33,13 @@ var UserInfoScreen = React.createClass({
        <View style={styles.background}>
 
         <View style={styles.contentContainer}>
-            <Image source={{uri: this.state.user.getIn(['headimgurl', 'data', 'url'])}}
-                   style={styles.profilePicture} />
-            <Text style={styles.name}>
-              {this.state.user.get('name')}
-            </Text>
+        <Image style={styles.profilePicture} source={{uri:this.state.user.get('headimgurl')}} />
+        <Text style={styles.name}>
+              {this.state.user.get('nickname')};
+           
+         
+        </Text>
+
 
             <TouchableOpacity onPress={UserActions.signOut}>
               <Text>Sign out</Text>
@@ -45,7 +48,7 @@ var UserInfoScreen = React.createClass({
         
        </View>
     );
-  }
+  },
 });
 
 module.exports = UserInfoScreen;

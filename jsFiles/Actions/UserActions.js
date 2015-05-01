@@ -11,12 +11,18 @@ var WechatApi = require('../Apis/WechatApi');
 
 var subscription = DeviceEventEmitter.addListener(
         'UserInfo',
-        (user) => {
+        // (user) => {
+        //   console.log("i find something from OC");
+        //   // console.log(user.nickname);
+        //   // console.log(user.country);
+        //   // console.log(user.openid);
+        //   WechatApi.getUserInfo(user.nickname,user.headimgurl);
+         (code) => {
           console.log("i find something from OC");
-          console.log(user.nickname);
-          console.log(user.country);
-          console.log(user.openid);
-          WechatApi.getUserInfo(user.nickname,user.headimgurl);
+          // console.log(user.nickname);
+          // console.log(user.country);
+          // console.log(user.openid);
+          WechatApi.getUserInfo(code.userId,code.token);
 
 
 

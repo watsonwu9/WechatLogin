@@ -21,6 +21,7 @@ var store = createStore({
         console.log('Error getting user from local storage! ' + error.message);
         complete();
       } else {
+        console.log('after getting user from LocalStorage, write it to UserStore in LocalStorage');
         UserStore.setState(JSON.parse(user));
         complete();
       }

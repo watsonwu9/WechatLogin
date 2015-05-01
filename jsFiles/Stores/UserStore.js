@@ -9,10 +9,13 @@ var _user = Immutable.Map();
 
 var store = createStore({
   setState(user) {
+    console.log('set user state in userStore');
     _user = Immutable.fromJS(user || {});
   },
 
   getState() {
+    console.log("get user state in userStore");
+    console.log(_user);
     return _user;
   },
 

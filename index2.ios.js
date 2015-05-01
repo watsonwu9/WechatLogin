@@ -25,16 +25,19 @@ var yiqixie = React.createClass({
   },
 
   componentWillMount(){
+    console.log("yiqixie will mount in index2");
     LocalStorage.bootstrap(() => this.setState({bootstrapped:true}));
   },
  
 
   renderScene(route,nav){
-    
+    console.log("index2 rendered");
       switch(route.id){
         case 'authenticate':
+          console.log('entering LoginScreen');
           return <LoginScreen navigator={nav}/>;
         case 'user-info':
+           console.log('entering UserInfoScreen');
           return <UserInfoScreen navigator={nav}/>;
         default:
           return <View />;
