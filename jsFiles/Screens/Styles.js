@@ -40,14 +40,20 @@ module.exports = StyleSheet.create({
     right: 0,
   },
   loginContainer: {
-    position:'relative',
-    top:40,
     backgroundColor: '#00CD00',
     color:'#090404',
-    borderRadius: 10,
+    borderRadius: 5,
+    top:40,
   
 
+  },
 
+  wechatLoginButton: {
+    top:80,
+    width: 200,
+    height: 40,
+    alignItems: 'center',
+    alignSelf: 'center',
   },
   buttonText: {
     fontSize: 18,
@@ -84,12 +90,7 @@ module.exports = StyleSheet.create({
     alignSelf: 'center',
   },
 
-  wechatLoginButton: {
-    width: 200,
-    height: 40,
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
+ 
 
   name: {
     fontSize: 20,
